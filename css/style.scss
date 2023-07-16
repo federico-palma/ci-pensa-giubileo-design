@@ -1,4 +1,361 @@
-h1 {
-    color: green;
-    background-color: aqua;
+:root {
+  --main: #113c66;
+  --main-bg: #fff8e5;
+  --header-color: rgb(255, 255, 255);
+  // --header-bg-color: #ab8a2f;
+  // --header-bg-color-light: #ab8a2f;
+  // --header-bg-color-focus: #8f7327;
+  --header-bg-color: rgb(109, 108, 108);
+  --header-bg-color-focus: rgb(47, 47, 47);
+  --header-bg-color-light: rgba(77, 77, 77, 0.512);
+  
+  --card-transition-bg: 0.5s;
+  --card-transition: 1s;
+
+  --secondary-card-bg: rgb(169, 167, 167);
+}
+
+* {
+  font-family: 'Libre Baskerville', serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--main-bg)
+}
+
+.section {
+  // min-height: 50vh;
+}
+
+// Header
+.header {
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  // background-color: rgba(0, 0, 0, 0.212);
+  max-height: 90px;
+  z-index: 999999;
+  transition: all 0.6s;
+
+  &.scrolled-down {
+    background-color: var(--header-bg-color);
+  }
+
+  .navbar-brand {
+    img {
+      height: 75px;
+      width: auto;
+      padding: 10px;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5;
+      background-color: #fff8e500;
+
+      
+      &:hover {
+        // background-color: rgba(211, 211, 211, 0.374);
+        .nav-link {
+          text-decoration: underline;
+        }
+
+      }
+      
+      .nav-link-btn {
+        background: none;
+        border: none;
+      }
+
+      .nav-link {
+        // margin: 15px 0px;
+        padding: 2px 30px;
+        color: var(--header-color);
+        font-size: 18px;
+        text-decoration-color: var(--header-color);
+        text-underline-offset: 3px;
+      }
+
+      &:first-child, &:last-child {
+        border-right: 1px solid var(--header-color);
+        border-left: 1px solid var(--header-color);
+      }
+    }
+  }  
+}
+
+// Submenu
+.submenu {
+  width: 50vw;
+  min-width: 720px;
+  position: fixed;
+  justify-content: center;
+  top: -500px;
+  left: 50%;
+  transform: translateX(-50%);
+  // border: 2px solid var(--header-bg-color);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  z-index: 999990;
+  opacity: 0;
+  transition: all 1s;
+  background-color: var(--header-bg-color-light);
+  padding: 20px 10px;
+
+  
+
+  .submenu-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-card-bg);
+    margin: 3px;
+    height: 100px;
+    width: 100%;
+    padding: 5px;
+    transition: all 0.5s;
+
+    text-decoration: none;
+    color: var(--header-color);
+    font-size: 15px;
+    
+    &.submenu-main {
+      font-size: 18px;
+
+    }
+
+    &:hover {
+      background-color: var(--header-bg-color);
+    }
+  }
+
+  &.submenu-open {
+    opacity: 1;
+    top: 88px;
+  }
+}
+
+// Hero
+.hero {
+  .hero-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.38);
+    padding: 0px;
+    position: absolute;
+  }
+
+  padding: 0px;
+  max-height: 80vh;
+  height: 80vh;
+  background: center center;
+
+  .title {
+    font-family: 'Parisienne', cursive;
+    z-index: 1000;
+    font-size: 70px;
+    color: white;
+    text-shadow: -1px 1px 3px darkgrey;
+  }
+}
+
+// Intro
+.intro-section {
+  position: relative;
+  padding: 40px;
+  margin-top: 90px;
+
+  &:before, &:after {
+    content: "";
+    transform: translateX(-50%);
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #000;
+    left: 50%;
+    position: absolute;
+  }
+
+  &:before {
+    top: 0px;
+  }
+  &:after {
+    bottom: 0;
+  }
+
+
+  p {
+    font-size: 20px;
+  }
+}
+
+// Highlight cards
+.cards-section {
+  // Highlights
+  .highlight-card {
+    justify-content: end;
+    border: 0px;
+    height: 400px;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    text-decoration: none;
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.517);
+    overflow-y: hidden;
+
+    transition: all var(--card-transition);
+
+    .card-overlay {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.337);
+      height: 50%;
+      width: 100%;
+      z-index: 0;
+      padding: 0px;
+      border-radius: inherit;
+      background: rgb(0,0,0);
+      background: linear-gradient(0deg, rgba(0,0,0,0.5648853291316527) 50%, rgba(252,252,255,0) 100%);
+      transition: all var(--card-transition);
+    }
+
+    .card-content{ 
+      position: absolute;
+      top: 80%;
+      transition: all  var(--card-transition);
+      color: white;
+      text-decoration: none;
+
+      .card-title {
+        &::after {
+          content: "";
+          transform: translateX(-50%);
+          display: block;
+          width: 100px;
+          height: 2px;
+          background: white;
+          left: 50%;
+          position: relative;
+          bottom: -15px;
+          opacity: 0;
+          transition: all var(--card-transition);
+        }
+      }
+      .card-description {
+        opacity: 0;
+        transition: all var(--card-transition);
+      }
+    }
+
+    &:hover {
+      box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.665);
+
+      .card-overlay {
+        height: 100%;
+      }
+      .card-content {
+        top: 50%;
+
+        .card-title {
+          &::after {
+            opacity: 1;
+          }
+        }
+        .card-description {
+          opacity: 1;
+        }
+      }
+    }
+  
+  }
+
+  // Rest of cards
+  .card-secondary{
+    width: 100%;
+    height: 200px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.5s;
+
+    background-color: var(--secondary-card-bg);
+    box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.517);
+
+    &:hover {
+      background-color: var(--header-bg-color);
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+}
+
+// Lawyer services section
+.lawyer-section {
+  min-height: 500px;
+}
+
+
+
+
+// Footer 
+.footer{
+  width: 100vw;
+  overflow-x: hidden;
+  height: 170px;
+  background-color: var(--header-bg-color);
+
+  .footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 100%;
+
+    &:after {
+        content: "";
+        transform: translateX(-50%);
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: white;
+        left: 50%;
+        position: absolute;
+        bottom: -25px;
+        transition: all var(--card-transition);
+    }
+
+    img {
+      height: auto;
+      width: 20%;
+      min-width: 200px;
+      max-width: 300px;
+    }
+
+  }
+  small {
+    color: white;
+    margin: auto;
+  }
 }
