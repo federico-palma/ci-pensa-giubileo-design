@@ -2,17 +2,18 @@
   --main: #113c66;
   --main-bg: #fff8e5;
   --header-color: rgb(255, 255, 255);
-  // --header-bg-color: #ab8a2f;
-  // --header-bg-color-light: #ab8a2f;
-  // --header-bg-color-focus: #8f7327;
-  --header-bg-color: rgb(109, 108, 108);
-  --header-bg-color-focus: rgb(47, 47, 47);
-  --header-bg-color-light: rgba(77, 77, 77, 0.512);
+  --header-bg-color: #600101;
+  --header-bg-color-light: #8f3b3b;
+  --header-bg-color-focus: #4b0404;
+  --secondary-card-bg: #907171;
+  // --header-bg-color: rgb(109, 108, 108);
+  // --header-bg-color-focus: rgb(47, 47, 47);
+  // --header-bg-color-light: rgb(137, 137, 137);
+  // --secondary-card-bg: rgb(169, 167, 167);
   
   --card-transition-bg: 0.5s;
   --card-transition: 1s;
 
-  --secondary-card-bg: rgb(169, 167, 167);
 }
 
 * {
@@ -164,6 +165,8 @@ body {
   max-height: 80vh;
   height: 80vh;
   background: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .title {
     font-family: 'Parisienne', cursive;
@@ -312,9 +315,41 @@ body {
 
 }
 
-// Lawyer services section
-.lawyer-section {
-  min-height: 500px;
+// Lawyer services section and centanni section
+.lawyer-section, .centanni-section {
+  .sec-title {
+    &::after {
+      content: "";
+        transform: translateX(-50%);
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: black;
+        left: 50%;
+        position: absolute;
+        bottom: -25px;
+    }
+  }
+
+  .sec-description {
+    text-align: justify;
+  }
+
+  .sec-btn {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: solid 3px black;
+    transition: all 0.5s;
+    color: black;
+    text-decoration: none;
+    
+
+    &:hover {
+      background-color: var(--header-bg-color);
+      border-color: var(--header-bg-color);
+      color: white;
+    }
+  }
 }
 
 
@@ -337,13 +372,12 @@ body {
         content: "";
         transform: translateX(-50%);
         display: block;
-        width: 80px;
-        height: 2px;
+        width: 90vw;
+        height: 1px;
         background: white;
         left: 50%;
         position: absolute;
         bottom: -25px;
-        transition: all var(--card-transition);
     }
 
     img {
