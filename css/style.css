@@ -263,7 +263,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 25px;
   transition: all 0.5s;
   background-color: var(--secondary-card-bg);
   box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.517);
@@ -275,6 +275,7 @@ body {
 
 .cards-section .card-secondary h3 {
   font-size: 20px;
+  margin: 0px;
 }
 
 .lawyer-section .sec-title::after, .centanni-section .sec-title::after {
@@ -343,4 +344,34 @@ body {
 .footer small {
   color: white;
   margin: auto;
+}
+
+.content-section {
+  margin-top: 150px;
+}
+
+.title-container {
+  position: relative;
+}
+
+.title-container:after {
+  content: "";
+  transform: translateX(-50%);
+  display: block;
+  width: 100px;
+  height: 2px;
+  background: black;
+  left: 50%;
+  position: absolute;
+  bottom: -40px;
+}
+
+.content-container {
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.content-container h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }

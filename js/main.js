@@ -6,15 +6,22 @@ let menuIsOpen = false;
 let distanceTop = window.pageYOffset;
 let distanceTopThreshold = 200;
 
-document.addEventListener("scroll", () => {
-  // console.log(window.pageYOffset);
-  distanceTop = window.pageYOffset;
-  if (distanceTop < distanceTopThreshold && !menuIsOpen) {
-    header.classList.remove("scrolled-down");
-  } else {
-    header.classList.add("scrolled-down");
-  }
-});
+let pageLocation = window.location.pathname;
+
+
+if (pageLocation == "/") {
+  document.addEventListener("scroll", () => {
+    // console.log(window.pageYOffset);
+    distanceTop = window.pageYOffset;
+    if (distanceTop < distanceTopThreshold && !menuIsOpen) {
+      header.classList.remove("scrolled-down");
+    } else {
+      header.classList.add("scrolled-down");
+    }
+  });
+} else {
+  header.classList.add("scrolled-down");
+}
 
 submenuBtn.addEventListener("click", () => {
   if (!menuIsOpen) {
@@ -23,7 +30,7 @@ submenuBtn.addEventListener("click", () => {
     submenuBtn.classList.add("text-decoration-underline")
     menuIsOpen = true;
   } else {
-    if (distanceTop < distanceTopThreshold) {
+    if (distanceTop < distanceTopThreshold && pageLocation == "/") {
         header.classList.remove("scrolled-down");
     }
     submenuBtn.classList.remove("text-decoration-underline")
