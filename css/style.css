@@ -2,10 +2,10 @@
   --main: #113c66;
   --main-bg: #fff8e5;
   --header-color: white;
-  --header-bg-color: #600101;
-  --header-bg-color-light: #8f3b3b;
-  --header-bg-color-focus: #4b0404;
-  --secondary-card-bg: #907171;
+  --header-bg-color: #1b3e66;
+  --header-bg-color-light: #324b68;
+  --header-bg-color-focus: #1b3e66;
+  --secondary-card-bg: #58789c;
   --card-transition-bg: 0.5s;
   --card-transition: 1s;
 }
@@ -347,7 +347,7 @@ body {
 }
 
 .content-section {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .title-container {
@@ -367,7 +367,7 @@ body {
 }
 
 .content-container {
-  margin-top: 100px;
+  margin-top: 0px;
   margin-bottom: 80px;
 }
 

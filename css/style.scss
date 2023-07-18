@@ -2,10 +2,20 @@
   --main: #113c66;
   --main-bg: #fff8e5;
   --header-color: rgb(255, 255, 255);
-  --header-bg-color: #600101;
-  --header-bg-color-light: #8f3b3b;
-  --header-bg-color-focus: #4b0404;
-  --secondary-card-bg: #907171;
+
+  // Red
+  // --header-bg-color: #600101;
+  // --header-bg-color-light: #8f3b3b;
+  // --header-bg-color-focus: #4b0404;
+  // --secondary-card-bg: #907171;
+  
+  // Blue
+  --header-bg-color: #1b3e66;
+  --header-bg-color-light: #324b68;
+  --header-bg-color-focus: #1b3e66;
+  --secondary-card-bg: #58789c;
+
+  // Grey
   // --header-bg-color: rgb(109, 108, 108);
   // --header-bg-color-focus: rgb(47, 47, 47);
   // --header-bg-color-light: rgb(137, 137, 137);
@@ -397,7 +407,7 @@ body {
 
 // CONTENT PAGE ---------
 .content-section {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .title-container {
@@ -417,7 +427,7 @@ body {
 }
 
 .content-container {
-  margin-top: 100px;
+  margin-top: 0px;
   margin-bottom: 80px;
 
   h3 {

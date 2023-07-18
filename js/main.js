@@ -9,7 +9,7 @@ let distanceTopThreshold = 200;
 let pageLocation = window.location.pathname;
 
 
-if (pageLocation == "/") {
+// if (pageLocation == "/") {
   document.addEventListener("scroll", () => {
     // console.log(window.pageYOffset);
     distanceTop = window.pageYOffset;
@@ -19,9 +19,9 @@ if (pageLocation == "/") {
       header.classList.add("scrolled-down");
     }
   });
-} else {
-  header.classList.add("scrolled-down");
-}
+// } else {
+//   header.classList.add("scrolled-down");
+// }
 
 submenuBtn.addEventListener("click", () => {
   if (!menuIsOpen) {
@@ -30,7 +30,7 @@ submenuBtn.addEventListener("click", () => {
     submenuBtn.classList.add("text-decoration-underline")
     menuIsOpen = true;
   } else {
-    if (distanceTop < distanceTopThreshold && pageLocation == "/") {
+    if (distanceTop < distanceTopThreshold) {
         header.classList.remove("scrolled-down");
     }
     submenuBtn.classList.remove("text-decoration-underline")
