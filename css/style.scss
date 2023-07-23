@@ -51,7 +51,7 @@ body {
   left: 0;
   // background-color: rgba(0, 0, 0, 0.212);
   max-height: 90px;
-  z-index: 999999;
+  z-index: 999;
   transition: all 0.6s;
 
   &.scrolled-down {
@@ -121,7 +121,7 @@ body {
   // border: 2px solid var(--header-bg-color);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  z-index: 999990;
+  z-index: 990;
   opacity: 0;
   transition: all 1s;
   background-color: var(--header-bg-color-light);
@@ -433,5 +433,56 @@ body {
   h3 {
     margin-top: 50px;
     margin-bottom: 20px;
+  }
+}
+
+// L'avvocato risponde page
+.lawyer-form {
+  input, textarea {
+    margin: 10px 0px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+    &:focus-visible, &:focus, &:active {
+      border-color: none;
+      outline: var(--header-bg-color) solid 2px;
+    }
+  }
+  #privacy-check:focus-visible, #privacy-check:focus, #privacy-check:active {
+    outline: none !important;
+  }
+  .privacy-check-label, #privacy-check {
+    cursor: pointer;
+  }
+  .sec-btn {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: solid 3px black;
+    transition: all 0.5s;
+    color: black;
+    text-decoration: none;
+    background: none;
+
+    &:hover {
+      background-color: var(--header-bg-color);
+      border-color: var(--header-bg-color);
+      color: white;
+    }
+  }
+}
+
+// Thank you modal
+#thankyou-modal {
+  .modal-body {
+    padding: 40px;
+    padding-top: 60px;
+    // display: flex;
+    text-align: center;
+  }
+  .btn-close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
   }
 }

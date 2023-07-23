@@ -96,8 +96,7 @@
     <!-- End Header -->
 
     <!-- Hero -->
-    <div class="container-fluid hero position-relative"
-        style="background-image: url(../assets/img/giubileo-3.jpeg);">
+    <div class="container-fluid hero position-relative" style="background-image: url(../assets/img/giubileo-9.jpeg);">
         <div class="hero-overlay"></div>
         <div class="row text-center h-100 align-content-center">
             <h1 class="title">L'Avvocato Risponde</h1>
@@ -108,18 +107,51 @@
     <div class="container intro-section section">
         <div class="row text-center justify-content-center">
             <p class="intro col-7">
-                Grazie al nostro servizio online, puoi ottenere una consulenza legale rapida ed esperta riguardante tutti gli aspetti funerari,
-                 ereditari e testamentari. Compilando il nostro modulo, potrai porre domande specifiche e ricevere risposte personalizzate 
-                 entro 24 ore. Il nostro team di professionisti è a tua disposizione per assisterti in modo tempestivo e affidabile, 
-                 garantendo una gestione ottimale delle questioni legali legate a questi importanti aspetti della vita.
+                Grazie al nostro servizio online, puoi ottenere una consulenza legale rapida ed esperta riguardante
+                tutti gli aspetti funerari,
+                ereditari e testamentari. Compilando il nostro modulo, potrai porre domande specifiche e ricevere
+                risposte personalizzate
+                entro 24 ore. Il nostro team di professionisti è a tua disposizione per assisterti in modo tempestivo e
+                affidabile,
+                garantendo una gestione ottimale delle questioni legali legate a questi importanti aspetti della vita.
             </p>
         </div>
     </div>
 
-    <!-- Content -->
+    <!-- Form -->
     <div class="content-section container">
-        <div class="content-container">
-
+        <div class="content-container row">
+            <div class="col-5">
+                <img class="sec-img w-100 rounded" src="../assets/img/giubileo-2.jpeg" alt="">
+            </div>
+            <div class="col-6 offset-1 h-100 align-self-center">
+                <form id="lawyer-form" action="" class="row lawyer-form" autocomplete="off">
+                    <div class="col-12 d-flex flex-column">
+                        <!-- <label for="name-input">Nome e Cognome</label> -->
+                        <input id="name-input" type="text" placeholder="Nome e Cognome *" required autocomplete="off">
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <!-- <label for="name-input">Nome e Cognome</label> -->
+                        <input id="name-input" type="email" placeholder="E-mail *" required autocomplete="off">
+                    </div>
+                    <div class="col-6 d-flex flex-column">
+                        <!-- <label for="name-input">Nome e Cognome</label> -->
+                        <input id="name-input" type="number" placeholder="Telefono" autocomplete="off">
+                    </div>
+                    <div class="col-12 d-flex flex-column">
+                        <textarea name="" id="" cols="30" rows="6" placeholder="Messaggio *"
+                            autocomplete="off" required></textarea>
+                    </div>
+                    <div class="col-12 d-flex flex-row align-content-center mt-2">
+                        <input id="privacy-check" type="checkbox" class="me-3" style="margin: 3px 0px;" required>
+                        <label for="privacy-check" class="privacy-check-label">Acconsento al Trattamento dei dati personali</label>
+                    </div>
+                    <div class="col-12 mt-4 d-flex justify-content-center">
+                        <button id="lawyer-form-btn" type="submit" class="sec-btn" data-toggle="modal"
+                            data-target="#thankyou-modal">Invia richiesta</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -133,10 +165,35 @@
         </div>
     </div>
 
+
+    <!-- Modal "Grazie per contatto" -->
+    <div class="modal fade" id="thankyou-modal" tabindex="-1" aria-labelledby="thankyou-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h4 class="mb-3">Grazie per averci contattato</h4>
+                    <p>Ti risponderemo al più presto possibile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous">
+        </script>
     <script src="../js/main.js"></script>
+
+    <script>
+        $("#lawyer-form-btn").on('click', function (e) {
+            e.preventDefault()
+            $("#thankyou-modal").modal('show');
+            $('#lawyer-form').trigger("reset");
+        })
+    </script>
 </body>
 
 </html>
