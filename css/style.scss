@@ -179,11 +179,12 @@ body {
   background-size: cover;
 
   .title {
-    font-family: 'Parisienne', cursive;
+    // font-family: 'Parisienne', cursive;
+    font-family: 'Roboto Serif', serif;
     z-index: 900;
     font-size: 70px;
     color: white;
-    text-shadow: -1px 1px 3px darkgrey;
+    text-shadow: -1px 1px 3px #a9a9a9a3;
   }
 }
 
@@ -372,6 +373,7 @@ body {
   overflow-x: hidden;
   height: 170px;
   background-color: var(--header-bg-color);
+  margin-top: 120px;
 
   .footer-logo-container {
     display: flex;
