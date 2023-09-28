@@ -1,6 +1,6 @@
 :root {
   --main: #113c66;
-  --main-bg: #fff8e5;
+  --main-bg: #b1bcc7;
   --header-color: white;
   --header-bg-color: #1b3e66;
   --header-bg-color-light: #324b68;
@@ -74,9 +74,23 @@ body {
   text-underline-offset: 3px;
 }
 
-.header .navbar-links .nav-item:first-child, .header .navbar-links .nav-item:last-child {
+.header .navbar-links .nav-item:first-child {
   border-right: 1px solid var(--header-color);
   border-left: 1px solid var(--header-color);
+}
+
+.header .navbar-links .nav-item:nth-last-child(2) {
+  border-left: 1px solid var(--header-color);
+}
+
+.header .navbar-links .nav-item.giubileo-btn {
+  background-color: white;
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: var(--main);
+  text-decoration: none;
+  margin-left: 6px;
 }
 
 .submenu {

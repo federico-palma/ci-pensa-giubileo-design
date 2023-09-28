@@ -1,6 +1,7 @@
 :root {
   --main: #113c66;
-  --main-bg: #fff8e5;
+  // --main-bg: #fff8e5;
+  --main-bg: #b1bcc7;
   --header-color: rgb(255, 255, 255);
 
   // Red
@@ -101,9 +102,22 @@ body {
         text-underline-offset: 3px;
       }
 
-      &:first-child, &:last-child {
+      &:first-child {
         border-right: 1px solid var(--header-color);
         border-left: 1px solid var(--header-color);
+      }
+      &:nth-last-child(2) {
+        border-left: 1px solid var(--header-color);
+      }
+
+      &.giubileo-btn {
+        background-color: white;
+        font-size: 18px;
+        padding: 10px 30px;
+        border-radius: 10px;
+        color: var(--main);
+        text-decoration: none;
+        margin-left: 6px;
       }
     }
   }  
